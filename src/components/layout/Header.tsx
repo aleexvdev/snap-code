@@ -1,37 +1,23 @@
 "use client";
 
-import { useTheme } from "next-themes";
 import React from "react";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "../ui/dropdown-menu";
-import { Button } from "../ui/button";
-import { Sun, Moon } from "lucide-react";
+import { Menu, ImageDown } from "lucide-react";
 
 export const Header = () => {
-  const { setTheme } = useTheme();
   return (
-    <header className="flex justify-between items-center p-4 bg-background">
-      <div className="text-2xl font-bold">SnapCode</div>
+    <header className="flex justify-between items-center p-4 bg-background mx-4">
+      <div className="text-2xl font-bold text-white">
+        Sn<span className="text-orange-400">apCo</span>
+        <span className="text-orange-600">de</span>
+      </div>
       <div className="flex items-center space-x-4">
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="outline" size="icon" className="border-none">
-              <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-              <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-              <span className="sr-only">Toggle theme</span>
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            <DropdownMenuItem onClick={() => setTheme("light")}>
-              Light
-            </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => setTheme("dark")}>
-              Dark
-            </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => setTheme("system")}>
-              System
-            </DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
+        <button className="flex items-center gap-3 bg-blue-800 rounded-md py-2 px-5 text-white hover:bg-blue-700 transition-colors">
+          <ImageDown className="w-5 h-5" />
+          <span className="font-semibold text-sm">Export</span>
+        </button>
+        <button className="flex items-center gap-3 bg-[#252525] rounded-md py-2 px-4 text-white hover:bg-[#252525] transition-colors">
+          <Menu className="w-5 h-5" />
+        </button>
       </div>
     </header>
   );

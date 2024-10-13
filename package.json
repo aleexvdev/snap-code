@@ -22,6 +22,7 @@
     "@uiw/codemirror-extensions-color": "^4.23.5",
     "@uiw/codemirror-extensions-langs": "^4.23.5",
     "@uiw/codemirror-themes": "^4.23.5",
+    "@uiw/codemirror-themes-all": "^4.23.5",
     "@uiw/react-codemirror": "^4.23.5",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",

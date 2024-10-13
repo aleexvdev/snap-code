@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import framerReducer from './features/framerSlice';
+import editorReducer from './features/editorSlice';
 
 export const store = configureStore({
   reducer: {
-    framer: framerReducer
+    framer: framerReducer,
+    editor: editorReducer,
   }
 });
 
