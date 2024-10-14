@@ -78,3 +78,9 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.polka {
+  background-image: radial-gradient(#333333c1 0.7px, #000000 1px);
+  background-size: 14px 14px;
+  background-position: center;
+}

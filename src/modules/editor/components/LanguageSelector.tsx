@@ -34,13 +34,13 @@ export const LanguageSelector = () => {
           {showDropdown && (
             <div className="absolute w-full mt-1 right-0 z-50">
               <ul className="bg-[#212121] rounded-md p-2 shadow-lg overflow-y-auto flex flex-col gap-y-1 outline-none max-h-80">
-                {LANGUAGES.map((item, index) => (
+                {LANGUAGES.map((item) => (
                   <li
-                    key={index}
+                    key={item}
                     className="flex items-center justify-between w-full p-0.5 text-[#CCCCCC]/50 hover:text-[#CCCCCC] select-none cursor-pointer capitalize"
                     onClick={() => {
                       setShowDropdown(false);
-                      dispatch(setLanguage(Number(item)));
+                      dispatch(setLanguage(item.toString()));
                     }}
                   >
                     <span
