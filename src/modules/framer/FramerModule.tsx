@@ -1,6 +1,5 @@
 "use client";
 
-import { Example } from "../editor/components/Example";
 import { BorderSelector } from "./components/BorderSelector";
 import { OpacitySelector } from "./components/OpacitySelector";
 import { PaddingSelector } from "./components/PaddingSelector";
@@ -16,7 +15,6 @@ export const FramerModule = () => {
         <RadiusSelector />
         <OpacitySelector />
         <BorderSelector />
-        <Example />
       </div>
     </div>
   );

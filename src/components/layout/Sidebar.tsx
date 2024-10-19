@@ -89,14 +89,14 @@ export const Sidebar = () => {
       )}
       {isActiveTab === 3 && (
         <motion.div
-          className="absolute bottom-14 w-full right-0 lg:hidden"
+          className="fixed bottom-14 w-full right-0 lg:hidden z-40"
           initial={{ y: 300 }}
           animate={{ y: 0 }}
           exit={{ y: 300 }}
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
         >
           <div className="w-full h-full px-2">
-            <div className="bg-[#1A1A1A] w-full h-full max-h-60 rounded-md flex items-center justify-center px-4 py-6 overflow-y-auto">
+            <div className="bg-[#1A1A1A] w-full h-full rounded-md flex items-center justify-center px-4 py-6 overflow-y-auto">
               <FramerModule />
             </div>
           </div>
