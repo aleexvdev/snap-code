@@ -4,7 +4,7 @@ import { languageNames } from "@/lib/languages/language-names";
 import { setLanguage } from "@/redux/features/editorSlice";
 import { RootState } from "@/redux/store";
 import { useDispatch, useSelector } from "react-redux";
-import { Select } from "@/components/Select";
+import { Select } from "@/components/ui/Select";
 import { LanguageName } from "@uiw/codemirror-extensions-langs";
 
 export const LanguageSelector = () => {

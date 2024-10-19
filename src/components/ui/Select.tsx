@@ -77,7 +77,6 @@ export const Select = ({ options, onChange, placeholder }: SelectProps) => {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full p-2 bg-[#292929] text-foreground rounded-sm mb-1 text-sm outline-none"
-                autoFocus
               />
               <ul className="max-h-32 overflow-y-auto">
                 {filteredOptions.map((option) => (
