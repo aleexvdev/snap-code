@@ -1,7 +1,7 @@
 "use client";
 
 // import { MainEditor } from "@/components/MainEditor";
-import { Sidebar } from "@/components/layout/Sidebar";
+import { Menu } from "@/components/layout/Menu";
 // import { useRef } from "react";
 
 export default function Home() {
@@ -9,7 +9,7 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen mx-4 space-x-5">
-      <Sidebar />
+      <Menu />
       {/* <div className="w-full flex-1">
         <MainEditor />
       </div> */}

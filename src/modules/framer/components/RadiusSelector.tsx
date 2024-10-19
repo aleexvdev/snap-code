@@ -24,7 +24,7 @@ export const RadiusSelector = () => {
               {RADIUS.map((item) => (
                 <button
                   key={item}
-                  className={`h-full flex items-center justify-center px-1 py-1 w-full rounded-sm text-sm ${
+                  className={`h-full flex items-center justify-center px-1 py-1 w-full rounded-sm text-sm transition-colors ${
                     radius.toString() === item.toString() ? "bg-[#404040]" : ""
                   }`}
                   onClick={() => dispatch(setRadius(Number(item)))}

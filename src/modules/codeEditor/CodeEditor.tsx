@@ -19,13 +19,13 @@ export const CodeEditor = () => {
   const { language, theme, lineNumbers, lineStart } = useSelector(
     (state: RootState) => state.editor
   );
-  const { border, radius, padding, opacity } = useSelector(
+  const { radius, padding, opacity } = useSelector(
     (state: RootState) => state.framer
   );
   const editorRef = useRef(null);
   const [extensions, setExtensions] = useState<Extension[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
-
+  console.log(isLoading, padding, opacity)
   // Configuración
   const basicSetup = useMemo(
     () => ({

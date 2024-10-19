@@ -7,11 +7,8 @@ export const PADDINGS = [
 ];
 
 export const BORDERS = [
-  "none",
-  "solid",
-  "glass",
-  "dotted",
-  "dashed",
+  { label: "None", value: "none" },
+  { label: "Glass", value: "glass" },
 ];
 
 export const RADIUS = [

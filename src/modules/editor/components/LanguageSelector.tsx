@@ -3,13 +3,13 @@
 import { languageNames } from "@/lib/languages/language-names";
 import { setLanguage } from "@/redux/features/editorSlice";
 import { RootState } from "@/redux/store";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { Select } from "@/components/ui/Select";
 import { LanguageName } from "@uiw/codemirror-extensions-langs";
 
 export const LanguageSelector = () => {
+
   const { language } = useSelector((state: RootState) => state.editor);
-  const dispatch = useDispatch();
 
   const LANGUAGES: { value: string; label: string; }[] = (Object.keys(languageNames) as LanguageName[]).map((key) => ({
     value: key,
@@ -26,7 +26,7 @@ export const LanguageSelector = () => {
           Language
         </label>
         <div className="w-full">
-          <Select options={LANGUAGES} onChange={setLanguage} placeholder={language} />
+          <Select options={LANGUAGES} onChange={setLanguage} placeholder={language} search={true} />
         </div>
       </div>
     </div>

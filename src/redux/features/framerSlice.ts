@@ -4,14 +4,12 @@ interface FramerState {
   padding: number;
   radius: number;
   opacity: number;
-  border: string;
 }
 
 const initialState: FramerState = {
   padding: 16,
   radius: 8,
   opacity: 100,
-  border: 'none',
 }
 
 const framerSlice = createSlice({
@@ -27,11 +25,8 @@ const framerSlice = createSlice({
     setOpacity: (state, action: PayloadAction<number>) => {
       state.opacity = action.payload;
     },
-    setBorder: (state, action: PayloadAction<string>) => {
-      state.border = action.payload;
-    },
   }
 });
 
-export const { setPadding, setRadius, setOpacity, setBorder } = framerSlice.actions;
+export const { setPadding, setRadius, setOpacity } = framerSlice.actions;
 export default framerSlice.reducer;
