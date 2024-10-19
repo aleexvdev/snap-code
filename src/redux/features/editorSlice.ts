@@ -6,6 +6,7 @@ interface EditorSlice {
   lineNumbers: boolean;
   lineStart: number;
   lineWrapping: boolean;
+  tabName: string;
 }
 
 const initialState: EditorSlice = {
@@ -14,6 +15,7 @@ const initialState: EditorSlice = {
   lineNumbers: true,
   lineStart: 1,
   lineWrapping: true,
+  tabName: "Untitled"
 }
 
 const editorSlice = createSlice({
@@ -35,8 +37,11 @@ const editorSlice = createSlice({
     toggleLineWrapping: (state) => {
       state.lineWrapping =!state.lineWrapping;
     },
+    setTabName: (state, action) => {
+      state.tabName = action.payload;
+    }
   },
 });
 
-export const { setLanguage, setTheme, toggleLineNumbers, setLineStart, toggleLineWrapping } = editorSlice.actions;
+export const { setLanguage, setTheme, toggleLineNumbers, setLineStart, toggleLineWrapping, setTabName } = editorSlice.actions;
 export default editorSlice.reducer;

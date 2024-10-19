@@ -23,7 +23,7 @@ export const HeaderSelector = () => {
         >
           Header
         </label>
-        <div className="w-full h-8 bg-[#292929] p-0.5 rounded-sm">
+        <div className="w-full h-8 bg-[#272727] p-0.5 rounded-sm">
           <div className="relative w-full flex gap-3 flex-1 h-full overflow-hidden">
             <motion.div
               className="absolute top-0 left-0 h-full w-1/2 bg-[#404040] rounded-sm"

@@ -2,12 +2,12 @@ import { createSlice } from "@reduxjs/toolkit";
 
 interface WindowSlice {
   header: boolean;
-  border: string;
+  border: boolean;
 }
 
 const initialState: WindowSlice = {
   header: true,
-  border: "none"
+  border: false,
 }
 
 const windowSlice = createSlice({
@@ -17,11 +17,11 @@ const windowSlice = createSlice({
     toggleHeader: (state) => {
       state.header =!state.header;
     },
-    setBorder: (state, action) => {
-      state.border = action.payload;
+    toggleBorder: (state) => {
+      state.border = !state.border;
     },
   },
 });
 
-export const { toggleHeader, setBorder } = windowSlice.actions;
+export const { toggleHeader, toggleBorder } = windowSlice.actions;
 export default windowSlice.reducer;

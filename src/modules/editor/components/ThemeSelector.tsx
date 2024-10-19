@@ -4,12 +4,12 @@ import { Select } from "@/components/ui/Select";
 import { customThemes } from "@/lib/themes";
 import { setTheme } from "@/redux/features/editorSlice";
 import { RootState } from "@/redux/store";
-import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 export const ThemeSelector = () => {
-  const [showDropdown, setShowDropdown] = useState<boolean>(false);
+
   const { theme } = useSelector((state: RootState) => state.editor);
+  const dispatch = useDispatch();
 
   const THEMES = Object.keys(customThemes);
   const themeOptions: { value: string; label: string; }[] = THEMES.map((theme) => ({
@@ -17,6 +17,9 @@ export const ThemeSelector = () => {
     label: theme,
   }));
   
+  const handleThemeChange = (value: string) => {
+    dispatch(setTheme(value));
+  };
 
   return (
     <div className="w-full">
@@ -24,12 +27,11 @@ export const ThemeSelector = () => {
         <label
           htmlFor="theme"
           className="text-sm text-muted-foreground w-[70%]"
-          onClick={() => setShowDropdown(!showDropdown)}
         >
           Theme
         </label>
         <div className="w-full">
-        <Select options={themeOptions} onChange={setTheme} placeholder={theme} search={true} />
+        <Select options={themeOptions} onChange={handleThemeChange} placeholder={theme} search={true} />
         </div>
       </div>
     </div>

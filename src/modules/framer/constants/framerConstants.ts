@@ -1,9 +1,9 @@
 export const PADDINGS = [
-  "0",
-  "16",
-  "32",
-  "64",
-  "128",
+  { label: "0", value: "0" },
+  { label: "16", value: "16" },
+  { label: "32", value: "32" },
+  { label: "64", value: "64" },
+  { label: "128", value: "128" },
 ];
 
 export const BORDERS = [

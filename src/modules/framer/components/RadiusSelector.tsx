@@ -20,7 +20,7 @@ export const RadiusSelector = () => {
         </label>
         <div className="w-full h-8">
           <div className="flex gap-3 flex-1 h-full">
-            <div className="w-full flex items-center px-0.5 py-0.5 bg-[#292929] rounded-sm">
+            <div className="w-full flex items-center px-0.5 py-0.5 bg-[#272727] rounded-sm">
               {RADIUS.map((item) => (
                 <button
                   key={item}

@@ -29,6 +29,10 @@ export const Select = ({
   const [position, setPosition] = useState<"top" | "bottom">("bottom");
   const containerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const [widthCbx, setWidthCbx] = useState("0px");
+  const [leftCbx, setLeftCbx] = useState("0px");
+  // const [bottomCbx, setBottomCbx] = useState("0px");
+  // const [topCbx, setTopCbx] = useState("0px");
 
   useClickOutside(containerRef, () => setIsOpen(false));
 
@@ -40,6 +44,10 @@ export const Select = ({
       setPosition(
         spaceBelow > 200 || spaceBelow > spaceAbove ? "bottom" : "top"
       );
+      setWidthCbx(`${rect.width}px`);
+      setLeftCbx(`${rect.left}px`);
+      // setBottomCbx(`${window.innerHeight - rect.bottom}px`);
+      // setTopCbx(`${window.innerHeight - rect.top}px`);
     }
   }, [isOpen]);
 
@@ -52,6 +60,13 @@ export const Select = ({
     onChange(option.value);
     setIsOpen(false);
   };
+
+  // console.log(position);
+  // console.log(position === "top" ? "top-full" : "bottom-full")
+  // console.log("topppp", topCbx);
+  // console.log("bottomttt", bottomCbx);
+  // console.log('T1: ', window.innerHeight - Number(topCbx.split("px")[0]));
+  // console.log('T2: ', window.innerHeight - Number(bottomCbx.split("px")[0]));
 
   return (
     <div ref={containerRef} className="relative w-full">
@@ -71,9 +86,11 @@ export const Select = ({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: position === "bottom" ? 10 : -10 }}
             transition={{ duration: 0.2 }}
-            className={`absolute ${
-              position === "bottom" ? "top-full" : "bottom-full"
-            } left-0 w-full my-1 bg-popover border border-border rounded-md shadow-lg z-[99999]`}
+            className={`fixed  my-1 bg-popover border border-border rounded-md shadow-lg z-50`}
+            style={{
+              width: widthCbx,
+              left: leftCbx,
+            }}
           >
             <div className="bg-[#161616] rounded-md p-1 shadow-lg overflow-hidden flex flex-col gap-y-1">
               {search && (
@@ -86,7 +103,7 @@ export const Select = ({
                   className="w-full p-2 bg-[#272727] text-foreground rounded-sm mb-1 text-sm outline-none"
                 />
               )}
-              <ul className="max-h-24 md:max-h-32 overflow-y-auto">
+              <ul className="max-h-28 md:max-h-32 overflow-y-auto">
                 {filteredOptions.map((option) => (
                   <li
                     key={option.value}

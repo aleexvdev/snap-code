@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface FramerState {
-  padding: number;
+  padding: number | string;
   radius: number;
   opacity: number;
 }
@@ -16,7 +16,7 @@ const framerSlice = createSlice({
   name: 'framer',
   initialState,
   reducers: {
-    setPadding: (state, action: PayloadAction<number>) => {
+    setPadding: (state, action: PayloadAction<number | string>) => {
       state.padding = action.payload;
     },
     setRadius: (state, action: PayloadAction<number>) => {
