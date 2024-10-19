@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Check, ChevronDown, ChevronsUpDown } from "lucide-react";
+import { Check, ChevronsUpDown } from "lucide-react";
 import { useClickOutside } from "@/hooks/useClickOutside";
 
 interface Option {
@@ -107,55 +107,4 @@ export const Select = ({ options, onChange, placeholder }: SelectProps) => {
       </AnimatePresence>
     </div>
   );
-
-  /* return (
-    <div ref={containerRef} className="relative w-full max-w-xs">
-      <div
-        onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center justify-between p-2 border border-border rounded-md bg-background cursor-pointer"
-      >
-        <span className="text-foreground">
-          {selectedOption ? selectedOption.label : placeholder}
-        </span>
-        <ChevronDown className="w-4 h-4 text-foreground" />
-      </div>
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: position === "bottom" ? 10 : -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: position === "bottom" ? 10 : -10 }}
-            transition={{ duration: 0.2 }}
-            className={`absolute ${
-              position === "bottom" ? "top-full" : "bottom-full"
-            } left-0 w-full mt-1 bg-popover border border-border rounded-md shadow-lg z-10`}
-          >
-            <input
-              ref={inputRef}
-              type="text"
-              placeholder="Search..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full p-2 border-b border-border bg-transparent text-foreground"
-              autoFocus
-            />
-            <ul className="max-h-60 overflow-auto">
-              {filteredOptions.map((option) => (
-                <li
-                  key={option.value}
-                  onClick={() => handleSelect(option)}
-                  className="flex items-center justify-between p-2 hover:bg-muted cursor-pointer"
-                >
-                  <span className="text-foreground">{option.label}</span>
-                  {selectedOption?.value === option.value && (
-                    <Check className="w-4 h-4 text-primary" />
-                  )}
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  ) */
 };
