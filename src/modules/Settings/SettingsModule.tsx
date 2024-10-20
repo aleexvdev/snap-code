@@ -4,6 +4,7 @@ import { Drawer } from "@/components/ui/Drawer";
 import { Computer, Languages, Menu, Moon, Palette, Sun } from "lucide-react";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { useTheme } from "@/hooks/useTheme";
 
 const themesPage = [
   { id: 1, name: "Claro", icon: <Sun className="w-5 h-5" /> },
@@ -18,11 +19,11 @@ const languagesPage = [
 
 export const SettingsModule = () => {
   const [isDrawerOpen, setDrawerOpen] = useState<boolean>(false);
-  const [isTheme, setIsTheme] = useState<string>("Oscuro");
   const [isLanguage, setIsLanguage] = useState<string>("Español");
+  const { theme, toggleTheme } = useTheme();
 
   const selectedIndexTheme = themesPage.findIndex(
-    (option) => option.name === isTheme
+    (option) => option.name === theme
   );
   const sliderVariantsTheme = {
     slide: (index: number) => ({
@@ -80,7 +81,7 @@ export const SettingsModule = () => {
                     <button
                       key={item.id}
                       className="relative z-10 w-full h-full flex items-center justify-center gap-x-2 py-2 cursor-pointer"
-                      onClick={() => setIsTheme(item.name)}
+                      onClick={toggleTheme}
                     >
                       {item.icon}
                       <span className="text-sm text-semibold">{item.name}</span>

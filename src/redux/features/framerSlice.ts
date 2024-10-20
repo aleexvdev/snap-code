@@ -5,6 +5,8 @@ interface FramerState {
   radius: number;
   opacity: number;
   background: string;
+  width: number;
+  height: number;
 }
 
 const initialState: FramerState = {
@@ -12,6 +14,8 @@ const initialState: FramerState = {
   radius: 8,
   opacity: 100,
   background: 'linear-gradient(-45deg, #402662 0%, #8000FF 100%)',
+  width: 200,
+  height: 200
 }
 
 const framerSlice = createSlice({

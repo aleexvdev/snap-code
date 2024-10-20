@@ -105,7 +105,7 @@ export const CodeEditor = () => {
     <div
       ref={editorRef}
       id="code-editor"
-      className="min-w-max h-max flex items-center justify-center bg-slate-400"
+      className="min-w-max h-max flex items-center justify-center"
       style={{
         backgroundImage:
           "linear-gradient(45deg, #252525 25%, transparent 0), linear-gradient(-45deg, #252525 25%, transparent 0), linear-gradient(45deg, transparent 75%, #252525 0), linear-gradient(-45deg, transparent 75%, #252525 0)",
@@ -169,36 +169,4 @@ export const CodeEditor = () => {
       </div>
     </div>
   );
-
-  /* return (
-    <div
-      ref={editorRef}
-      className="min-w-max h-max flex items-center justify-center bg-slate-400 relative"
-      id="code-editor"
-      style={{ 
-        padding: `${padding}px`,
-        borderRadius: `${radius}px`,
-        opacity: `${opacity}%`,
-      }}
-    >
-      <div
-        className="w-full h-full px-4 py-2 overflow-x-auto"
-        style={{
-          background: editorTheme?.settings?.background || "transparent",
-        }}
-      >
-        <CodeMirror
-          value={`const enfoque = ["optimización", "mantenibilidad", "escalabilidad", "innovación"];\nconst fortalezas = ["adaptabilidad", "persistencia", "proactividad", "análisis"];\nconst valores = ["comunicación", "eficiencia", "flexibilidad", "integridad"];\n\nconst miMetodo = [...enfoque, ...fortalezas, ...valores];\nconsole.log(`+'`Integrando estrategias: ${miMetodo.join(", ")}`'+`);\nconsole.log(hacer(trabajo(), miMetodo)); // Listo! 👽`}
-          extensions={extensions}
-          theme={editorTheme}
-          basicSetup={basicSetup}
-          style={{
-            fontSize,
-            minWidth: "100%",
-            minHeight: "100%",
-          }}
-        />
-      </div>
-    </div>
-  ); */
 };

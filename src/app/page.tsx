@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen mx-4">
       <Menu />
-      <div className="w-full h-[calc(100vh-130px)] grid place-items-center z-10 px-4 py-6 bg-black rounded-2xl overflow-auto">
+      <div className="w-full h-[calc(100vh-180px)] grid place-items-center z-10 px-4 py-6 bg-black rounded-2xl overflow-auto">
         <MainEditor />
       </div>
     </main>
