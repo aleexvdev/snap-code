@@ -64,9 +64,9 @@ export const SettingsModule = () => {
             <div className="w-full h-max p-1 rounded-md bg-[#272727]">
               <div className="relative w-full flex gap-3 flex-1 h-full overflow-hidden bg-[#272727]">
                 {themesPage.map((item) => (
-                  <>
+                  <div key={item.name} className="w-1/3 flex items-center justify-center">
                     <motion.div
-                      className="absolute top-0 left-0 h-full w-1/3 bg-[#404040] rounded-sm py-1"
+                      className="absolute top-0 left-0 h-full w-1/3 bg-[#404040] rounded-sm py-1 cursor-pointer"
                       custom={selectedIndexTheme}
                       initial="slide"
                       animate="slide"
@@ -79,13 +79,13 @@ export const SettingsModule = () => {
                     />
                     <button
                       key={item.id}
-                      className="relative z-10 w-1/3 h-full flex items-center justify-center gap-x-2 py-2"
+                      className="relative z-10 w-full h-full flex items-center justify-center gap-x-2 py-2 cursor-pointer"
                       onClick={() => setIsTheme(item.name)}
                     >
                       {item.icon}
                       <span className="text-sm text-semibold">{item.name}</span>
                     </button>
-                  </>
+                  </div>
                 ))}
               </div>
             </div>
@@ -101,9 +101,9 @@ export const SettingsModule = () => {
             <div className="w-full h-max p-1 rounded-md bg-[#272727]">
               <div className="relative w-full flex gap-3 flex-1 h-full overflow-hidden bg-[#272727]">
                 {languagesPage.map((item) => (
-                  <>
+                  <div key={item.name} className="w-1/2 flex items-center justify-center">
                     <motion.div
-                      className="absolute top-0 left-0 h-full w-1/2 bg-[#404040] rounded-sm py-1"
+                      className="absolute top-0 left-0 h-full w-1/2 bg-[#404040] rounded-sm py-1 cursor-pointer"
                       custom={selectedIndexLanguage}
                       initial="slide"
                       animate="slide"
@@ -116,12 +116,12 @@ export const SettingsModule = () => {
                     />
                     <button
                       key={item.id}
-                      className="relative z-10 w-1/2 h-full flex items-center justify-center gap-x-2 py-2"
+                      className="relative z-10 w-full h-full flex items-center justify-center py-2 cursor-pointer"
                       onClick={() => setIsLanguage(item.name)}
                     >
                       <span className="text-sm text-semibold">{item.name}</span>
                     </button>
-                  </>
+                  </div>
                 ))}
               </div>
             </div>

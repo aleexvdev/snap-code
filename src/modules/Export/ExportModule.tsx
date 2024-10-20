@@ -98,9 +98,9 @@ export const ExportModule = () => {
               <div className="w-full h-max p-1 rounded-md bg-[#272727]">
                 <div className="relative w-full flex gap-3 flex-1 h-full overflow-hidden bg-[#272727]">
                   {formats.map((item) => (
-                    <>
+                    <div key={item} className="w-1/3 flex items-center justify-center">
                       <motion.div
-                        className="absolute top-0 left-0 h-full w-1/3 bg-[#404040] rounded-sm py-1"
+                        className="absolute top-0 left-0 h-full w-1/3 bg-[#404040] rounded-sm py-1 cursor-pointer"
                         custom={selectedIndexFormat}
                         initial="slide"
                         animate="slide"
@@ -113,14 +113,14 @@ export const ExportModule = () => {
                       />
                       <button
                         key={item}
-                        className="relative z-10 w-1/3 h-full flex items-center justify-center gap-x-2 py-2"
+                        className="relative z-10 w-full h-full flex items-center justify-center py-2 cursor-pointer"
                         onClick={() =>
                           dispatch(setExportFormat(item as ExportFormat))
                         }
                       >
                         <span className="text-base text-semibold">.{item}</span>
                       </button>
-                    </>
+                    </div>
                   ))}
                 </div>
               </div>
@@ -135,9 +135,9 @@ export const ExportModule = () => {
               <div className="w-full h-max p-1 rounded-md bg-[#272727]">
                 <div className="relative w-full flex gap-3 flex-1 h-full overflow-hidden bg-[#272727]">
                   {scales.map((item) => (
-                    <>
+                    <div key={item} className="w-1/3 flex items-center justify-center">
                       <motion.div
-                        className="absolute top-0 left-0 h-full w-1/3 bg-[#404040] rounded-sm py-1"
+                        className="absolute top-0 left-0 h-full w-1/3 bg-[#404040] rounded-sm py-1 cursor-pointer"
                         custom={selectedIndexScale}
                         initial="slide"
                         animate="slide"
@@ -150,14 +150,14 @@ export const ExportModule = () => {
                       />
                       <button
                         key={item}
-                        className="relative z-10 w-1/3 h-full flex items-center justify-center gap-x-2 py-2"
+                        className="relative z-10 w-full h-full flex items-center justify-center py-2 cursor-pointer"
                         onClick={() =>
                           dispatch(setExportScale(item as ExportScale))
                         }
                       >
                         <span className="text-base text-semibold">{item}x</span>
                       </button>
-                    </>
+                    </div>
                   ))}
                 </div>
               </div>

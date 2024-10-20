@@ -18,12 +18,12 @@ export const Header = () => {
           </span>
         </div>
         <div className="flex items-center justify-between gap-x-2 relative">
-          <button className="hidden lg:flex items-center gap-3 bg-transparent rounded-md py-1.5 px-3 md:py-2 md:px-4 text-white hover:bg-[#252525] transition-colors">
+          <button key={"keyboard"} className="hidden lg:flex items-center gap-3 bg-transparent rounded-md py-1.5 px-3 md:py-2 md:px-4 text-white hover:bg-[#252525] transition-colors">
             <Keyboard className="w-5 h-5" />
             <span className="font-semibold text-sm">Help</span>
           </button>
-          <ExportModule />
-          <SettingsModule />
+          <ExportModule key={"export"} />
+          <SettingsModule key={"settings"} />
         </div>
       </header>
     </>
