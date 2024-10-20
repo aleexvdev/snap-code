@@ -15,17 +15,18 @@ const lineWrapping = false;
 const readOnly = false;
 
 export const CodeEditor = () => {
-  // const dispatch = useDispatch();
   const { language, theme, lineNumbers, lineStart } = useSelector(
     (state: RootState) => state.editor
   );
-  const { radius, padding, opacity } = useSelector(
+  const { radius, padding, opacity, background } = useSelector(
     (state: RootState) => state.framer
   );
+  const { border } = useSelector((state: RootState) => state.window);
   const editorRef = useRef(null);
   const [extensions, setExtensions] = useState<Extension[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
-  console.log(isLoading, padding, opacity)
+  console.log(isLoading);
+
   // Configuración
   const basicSetup = useMemo(
     () => ({
@@ -75,7 +76,7 @@ export const CodeEditor = () => {
       EditorView.theme({
         "&": {
           height: "100%",
-          width: "500px",
+          width: "100%",
         },
       }),
     ],
@@ -103,26 +104,101 @@ export const CodeEditor = () => {
   return (
     <div
       ref={editorRef}
-      className="flex items-center justify-center"
       id="code-editor"
+      className="min-w-max h-max flex items-center justify-center bg-slate-400"
+      style={{
+        backgroundImage:
+          "linear-gradient(45deg, #252525 25%, transparent 0), linear-gradient(-45deg, #252525 25%, transparent 0), linear-gradient(45deg, transparent 75%, #252525 0), linear-gradient(-45deg, transparent 75%, #252525 0)",
+        backgroundSize: "20px 20px",
+        backgroundPosition: "0 0,0 10px,10px -10px,-10px 0",
+        borderRadius: `${radius}px`,
+      }}
     >
       <div
-        className="h-max px-4 py-2"
+        className="min-w-full h-full p-8 relative"
         style={{
+          // width: "500px",
+          padding: `${padding}px`,
           borderRadius: `${radius}px`,
+        }}
+      >
+        <div
+          className="absolute top-0 left-0 w-full h-full"
+          style={{
+            background: background,
+            opacity: `${opacity}%`,
+            borderRadius: radius + "px",
+          }}
+        />
+        <div
+          className="relative bg-[#1E1E1E] w-full h-full"
+          style={{
+            borderRadius: radius + "px",
+            boxShadow: `${
+              border
+                ? "0 0 0 1px rgba(0, 0, 0, .1), 0 0 0 1px rgba(0,0,0,.9), inset 0 0 0 1.5px rgba(255, 255, 255, .4)"
+                : ""
+            }`,
+            padding: `${border ? "3px 2px" : "0px"}`,
+          }}
+        >
+          <div
+            className="w-full h-full px-4 py-2 overflow-x-auto"
+            style={{
+              background: editorTheme?.settings?.background || "transparent",
+              borderRadius: radius + "px",
+            }}
+          >
+            <CodeMirror
+              value={
+                `const enfoque = ["optimización", "mantenibilidad", "escalabilidad", "innovación"];\nconst fortalezas = ["adaptabilidad", "persistencia", "proactividad", "análisis"];\nconst valores = ["comunicación", "eficiencia", "flexibilidad", "integridad"];\n\nconst miMetodo = [...enfoque, ...fortalezas, ...valores];\nconsole.log(` +
+                '`Integrando estrategias: ${miMetodo.join(", ")}`' +
+                `);\nconsole.log(hacer(trabajo(), miMetodo)); // Listo! 👽`
+              }
+              extensions={extensions}
+              theme={editorTheme}
+              basicSetup={basicSetup}
+              style={{
+                fontSize,
+                minWidth: "100%",
+                minHeight: "100%",
+              }}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
+  /* return (
+    <div
+      ref={editorRef}
+      className="min-w-max h-max flex items-center justify-center bg-slate-400 relative"
+      id="code-editor"
+      style={{ 
+        padding: `${padding}px`,
+        borderRadius: `${radius}px`,
+        opacity: `${opacity}%`,
+      }}
+    >
+      <div
+        className="w-full h-full px-4 py-2 overflow-x-auto"
+        style={{
           background: editorTheme?.settings?.background || "transparent",
         }}
       >
         <CodeMirror
-          value={`function Counter() {\n  const [count, setCount] = createSignal(0);\n  setInterval(\n      () => setCount(count() + 1),\n      1000\n  );\n  return <div>The count is {count()}</div>\n}\n`}
+          value={`const enfoque = ["optimización", "mantenibilidad", "escalabilidad", "innovación"];\nconst fortalezas = ["adaptabilidad", "persistencia", "proactividad", "análisis"];\nconst valores = ["comunicación", "eficiencia", "flexibilidad", "integridad"];\n\nconst miMetodo = [...enfoque, ...fortalezas, ...valores];\nconsole.log(`+'`Integrando estrategias: ${miMetodo.join(", ")}`'+`);\nconsole.log(hacer(trabajo(), miMetodo)); // Listo! 👽`}
           extensions={extensions}
           theme={editorTheme}
           basicSetup={basicSetup}
           style={{
             fontSize,
+            minWidth: "100%",
+            minHeight: "100%",
           }}
         />
       </div>
     </div>
-  );
+  ); */
 };

@@ -11,7 +11,7 @@ interface EditorSlice {
 
 const initialState: EditorSlice = {
   language: 'javascript',
-  theme: 'Atomone',
+  theme: 'vsCode',
   lineNumbers: true,
   lineStart: 1,
   lineWrapping: true,

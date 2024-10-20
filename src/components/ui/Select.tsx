@@ -86,7 +86,7 @@ export const Select = ({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: position === "bottom" ? 10 : -10 }}
             transition={{ duration: 0.2 }}
-            className={`fixed  my-1 bg-popover border border-border rounded-md shadow-lg z-50`}
+            className={`fixed my-1 bg-popover border border-border rounded-md shadow-lg z-50`}
             style={{
               width: widthCbx,
               left: leftCbx,
@@ -103,7 +103,7 @@ export const Select = ({
                   className="w-full p-2 bg-[#272727] text-foreground rounded-sm mb-1 text-sm outline-none"
                 />
               )}
-              <ul className="max-h-28 md:max-h-32 overflow-y-auto">
+              <ul className="max-h-24 lg:max-h-32 overflow-y-auto">
                 {filteredOptions.map((option) => (
                   <li
                     key={option.value}

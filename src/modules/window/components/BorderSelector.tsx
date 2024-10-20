@@ -36,13 +36,13 @@ export const BorderSelector = () => {
             className="relative z-10 w-1/2 h-full flex items-center justify-center text-xs py-1 font-semibold"
             onClick={() => dispatch(toggleBorder())}
           >
-            None
+            Glass
           </button>
           <button
             className="relative z-10 w-1/2 h-full flex items-center justify-center text-xs py-1 font-semibold"
             onClick={() => dispatch(toggleBorder())}
           >
-            Glass
+            None
           </button>
         </div>
       </div>
