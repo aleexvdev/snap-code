@@ -36,8 +36,8 @@ export const TabContent = ({
                 </h3>
                 <motion.button
                   className="bg-[#252525] rounded-md p-1.5"
-                  whileHover={{ scale: 1.1, rotate: 90 }} // Efecto suave al pasar el mouse
-                  whileTap={{ scale: 0.95 }} // Efecto al hacer click
+                  whileHover={{ scale: 1.1, rotate: 90 }}
+                  whileTap={{ scale: 0.95 }} 
                   onClick={closeContentTab}
                 >
                   <X className="w-5 h-5" />
