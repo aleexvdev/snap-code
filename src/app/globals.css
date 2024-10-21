@@ -4,19 +4,89 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
 }
 
-@layer utilities {
+/* @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
 }
 
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
+    --background: #ffffff; 
+    --editor: #f4f4f4; 
+    --foreground: #1a1a1a;
+    --menu-sidebar: #e0e0e0; 
+    --modal-background: #f8f9fa; 
+    --modal-selectors: #007bff;
+    --modal-selectors-active: #0056b3;
+    --dropdown-background: #e0e0e0;
+    --border: #cccccc; 
+    --ring: #007bff;
+    --radius: 0.5rem; 
+    --primary: #007bff;
+    --secondary: #6c757d; 
+    --accent: #28a745; 
+    --danger: #dc3545; 
+    --warning: #ffc107;
+    --success: #28a745; 
+    --info: #17a2b8;
+    --muted: #6c757d; 
+  }
+
+  .dark {
+    --background: #121212; 
+    --editor: #000000; 
+    --foreground: #ffffff; 
+    --menu-sidebar: #1a1a1a; 
+    --button-background: #252525; 
+    --modal-background: #1a1a1a; 
+    --modal-selectors: #272727; 
+    --modal-selectors-active: #404040; 
+    --dropdown-background: #181818; 
+    --border: #333333; 
+    --ring: #404040;
+  }
+} */
+
+/* @layer base {
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  button {
+    @apply bg-button-background text-button-foreground;
+  }
+
+  .modal {
+    @apply bg-modal-background text-foreground;
+  }
+
+  .dropdown {
+    @apply bg-dropdown-background;
+  }
+
+  .modal-selector {
+    @apply bg-modal-selectors;
+  }
+
+  .modal-selector-active {
+    @apply bg-modal-selectors-active;
+  }
+} */
+
+
+/* @layer base {
+  :root {
+    --background: #F4F7FA;
+    --editor: #FFFFFF;
+    --foreground: #0b0b0b;
     --card: 0 0% 100%;
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
@@ -44,10 +114,11 @@ body {
 
   .dark {
     --background: #212121;
-    --foreground: 0 0% 98%;
+    --bg-editor: #000000;
+    --foreground: #F9F9F9;
     --card: 240 10% 16.1%;
     --card-foreground: 0 0% 98%;
-    --popover: 240 10% 16.1%;
+    --popover: #1A1A1A;
     --popover-foreground: 0 0% 98%;
     --primary: 0 0% 98%;
     --primary-foreground: 240 5.9% 10%;
@@ -86,7 +157,7 @@ body {
   body {
     @apply bg-background text-foreground;
   }
-}
+} */
 
 .polka {
   background-image: radial-gradient(#333333 0.7px, #121212 1px);

@@ -51,23 +51,23 @@ export const Popover = ({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: position === "top" ? -10 : 10 }}
             transition={{ duration: 0.2 }}
-            className="fixed w-full h-max right-6 bottom-28 z-50 flex flex-col items-center justify-center p-4 bg-[#2e2e2e] rounded-lg shadow-xl max-w-xs"
+            className="fixed w-full h-max right-6 bottom-28 z-50 flex flex-col items-center justify-center p-4 bg-[#e6e5e5] dark:bg-[#2e2e2e] rounded-lg shadow-2xl max-w-xs"
           >
             <div className="w-full flex items-center justify-between mb-6">
               <div className="w-full flex items-center justify-start">
                 {Icon && <Icon className="w-5 h-5 mr-2" />}
-                <h3 className="text-lg lg:text-sm font-semibold tracking-wider text-white">
+                <h3 className="text-xl lg:text-2xl font-semibold text-black dark:text-white">
                   {title}
                 </h3>
               </div>
 
               <motion.button
-                className="bg-[#252525] rounded-md p-1.5"
+                className="bg-[#d6d6d6] dark:bg-[#252525] rounded-lg p-1.5"
                 whileHover={{ scale: 1.1, rotate: 90 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setIsOpen(false)}
               >
-                <X className="w-5 h-5" />
+                <X className="w-5 h-5 text-black/80 dark:text-white/80" />
               </motion.button>
             </div>
             <div className="w-full">{children}</div>

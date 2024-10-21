@@ -26,7 +26,7 @@ export const ThemeSelector = () => {
       <div className="w-full flex items-center justify-start">
         <label
           htmlFor="theme"
-          className="text-sm text-muted-foreground w-[70%]"
+          className="text-sm text-black dark:text-white font-medium w-[50%] lg:w-[70%]"
         >
           Theme
         </label>

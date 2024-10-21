@@ -19,14 +19,14 @@ export const HeaderSelector = () => {
       <div className="w-full flex items-center justify-start">
         <label
           htmlFor="lineNumbers"
-          className="text-sm text-muted-foreground w-[70%]"
+          className="text-sm text-black dark:text-white font-medium w-[50%] lg:w-[70%]"
         >
           Header
         </label>
-        <div className="w-full h-8 bg-[#272727] p-0.5 rounded-sm">
+        <div className="w-full h-8 bg-[#f0f0f0] dark:bg-[#272727] p-0.5 rounded-lg">
           <div className="relative w-full flex gap-3 flex-1 h-full overflow-hidden">
             <motion.div
-              className="absolute top-0 left-0 h-full w-1/2 bg-[#404040] rounded-sm"
+              className="absolute top-0 left-0 h-full w-1/2 bg-[#d6d6d6] dark:bg-[#404040] rounded-lg"
               initial={header ? "show" : "hide"}
               animate={header ? "show" : "hide"}
               variants={sliderVariants}

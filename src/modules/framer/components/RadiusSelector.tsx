@@ -28,12 +28,12 @@ export const RadiusSelector = () => {
         >
           Radius
         </label>
-        <div className="w-full h-8 p-0.5 rounded-md bg-[#272727]">
-          <div className="relative w-full flex items-center justify-between gap-3 flex-1 px-1 h-full overflow-hidden bg-[#272727] rounded-md">
+        <div className="w-full h-8 p-0.5 rounded-lg bg-[#f0f0f0] dark:bg-[#272727]">
+          <div className="relative w-full flex items-center justify-between gap-3 flex-1 px-1 h-full overflow-hidden bg-[#f0f0f0] dark:bg-[#272727] rounded-lg">
             {RADIUS.map((item) => (
               <div key={item} className="w-1/4 flex items-center justify-center">
                 <motion.div
-                  className="absolute top-0 left-0 h-full w-1/4 bg-[#404040] rounded-sm py-1 cursor-pointer"
+                  className="absolute top-0 left-0 h-full w-1/4 bg-[#d6d6d6] dark:bg-[#404040] rounded-lg py-1 cursor-pointer"
                   custom={selectedIndex}
                   initial="slide"
                   animate="slide"

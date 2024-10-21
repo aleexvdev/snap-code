@@ -71,7 +71,7 @@ export const Select = ({
   return (
     <div ref={containerRef} className="relative w-full">
       <button
-        className="inline-flex items-center justify-between py-0.5 px-3 outline-none w-full appearance-none border border-transparent bg-[#272727] rounded-sm h-8"
+        className="inline-flex items-center justify-between py-0.5 px-3 outline-none w-full appearance-none border border-transparent bg-[#f0f0f0] dark:bg-[#272727] rounded-lg h-8"
         onClick={() => setIsOpen(!isOpen)}
       >
         <span className="text-sm text-foreground capitalize">
@@ -86,13 +86,13 @@ export const Select = ({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: position === "bottom" ? 10 : -10 }}
             transition={{ duration: 0.2 }}
-            className={`fixed my-1 bg-popover border border-border rounded-md shadow-lg z-50`}
+            className={`fixed my-1 rounded-md shadow-lg z-50`}
             style={{
               width: widthCbx,
               left: leftCbx,
             }}
           >
-            <div className="bg-[#161616] rounded-md p-1 shadow-lg overflow-hidden flex flex-col gap-y-1">
+            <div className="bg-[#f0f0f0] dark:bg-[#272727] rounded-lg p-1 shadow-lg overflow-hidden flex flex-col gap-y-1 border-none">
               {search && (
                 <input
                   ref={inputRef}
@@ -100,14 +100,14 @@ export const Select = ({
                   placeholder="Search..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full p-2 bg-[#272727] text-foreground rounded-sm mb-1 text-sm outline-none"
+                  className="w-full p-2 bg-[#e2e1e1] dark:bg-[#161616] rounded-lg mb-1 text-sm outline-none border-none placeholder:text-[#121111c2] placeholder:dark:text-[#ccccccc2] text-[#121111] dark:text-[#CCCCCC]"
                 />
               )}
               <ul className="max-h-24 lg:max-h-32 overflow-y-auto">
                 {filteredOptions.map((option) => (
                   <li
                     key={option.value}
-                    className="flex items-center justify-between w-full px-0.5 py-px text-[#CCCCCC]/50 hover:text-[#CCCCCC] select-none cursor-pointer capitalize"
+                    className="flex items-center justify-between w-full px-0.5 py-px text-[#121111] hover:text-[#121111]/80 dark:text-[#CCCCCC]/50 hover:dark:text-[#CCCCCC] select-none cursor-pointer capitalize"
                     onClick={() => handleSelect(option)}
                   >
                     <span
@@ -120,7 +120,7 @@ export const Select = ({
                       {option.label}
                     </span>
                     {selectedOption?.value === option.value && (
-                      <Check className="w-4 h-4 text-[#CCCCCC]" />
+                      <Check className="w-4 h-4 text-[#CCCCCC] mr-2" />
                     )}
                   </li>
                 ))}

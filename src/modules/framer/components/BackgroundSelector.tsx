@@ -47,7 +47,7 @@ export const BackgroundSelector = () => {
               <div className="flex gap-3 flex-1 h-full">
                 <button
                   ref={buttonRef}
-                  className="w-full flex items-center px-2 py-0.5 bg-[#272727] rounded-md"
+                  className="w-full flex items-center px-2 py-0.5 bg-[#f0f0f0] dark:bg-[#272727] rounded-lg"
                 >
                   <span
                     className="rounded-md w-full h-5"
@@ -58,15 +58,15 @@ export const BackgroundSelector = () => {
             </div>
           }
         >
-          <div className="w-full bg-[#272727] p-1 rounded-md">
-            <div className="relative w-full flex gap-3 flex-1 h-full overflow-hidden bg-[#272727] rounded-md">
+          <div className="w-full bg-[#f0f0f0] dark:bg-[#272727] p-1 rounded-lg">
+            <div className="relative w-full flex gap-3 flex-1 h-full overflow-hidden">
               {tabsPallette.map((item) => (
                 <div
                   key={item.name}
-                  className="w-full flex items-center justify-center rounded-md"
+                  className="w-full flex items-center justify-center rounded-lg"
                 >
                   <motion.div
-                    className="absolute top-0 left-0 h-full w-1/2 bg-[#404040] rounded-md py-1 cursor-pointer"
+                    className="absolute top-0 left-0 h-full w-1/2 bg-[#d6d6d6] dark:bg-[#404040] rounded-lg py-1 cursor-pointer"
                     custom={selectedIndexTab}
                     initial="slide"
                     animate="slide"
@@ -79,10 +79,10 @@ export const BackgroundSelector = () => {
                   />
                   <button
                     key={item.id}
-                    className="relative z-10 w-full h-full rounded-md flex items-center justify-center gap-x-2 py-2 cursor-pointer"
+                    className="relative z-10 w-full h-full rounded-lg flex items-center justify-center gap-x-2 py-2 cursor-pointer"
                     onClick={() => setIsTab(item.name)}
                   >
-                    <span className="text-sm text-semibold text-white">
+                    <span className="text-sm text-semibold text-black dark:text-white">
                       {item.name}
                     </span>
                   </button>
@@ -90,7 +90,7 @@ export const BackgroundSelector = () => {
               ))}
             </div>
           </div>
-          <div className="w-full h-full flex items-center overflow-hidden bg-[#272727] rounded-md my-4">
+          <div className="w-full h-full flex items-center overflow-hidden bg-[#f0f0f0] dark:bg-[#272727] rounded-lg my-4">
             <div className="w-full grid grid-cols-4 place-items-center gap-4 mt-6 mb-3">
               {isTab === "Gradientes"
                 ? BACKGROUNDS.map((background, index) => (

@@ -12,10 +12,10 @@ import { WindowModule } from "@/modules/window/WindowModule";
 export const BottomTabNavigator = () => {
   const [isActiveTab, setIsActiveTab] = useState<number>(0);
   const tabs = [
-    { id: 1, name: "Framer", icon: <Layers3 className="w-5 h-5" />, content: <FramerModule /> },
-    { id: 2, name: "Editor", icon: <Code className="w-5 h-5" />, content: <EditorModule /> },
-    { id: 3, name: "Window", icon: <PanelsTopLeft className="w-5 h-5" />, content: <WindowModule /> },
-    { id: 4, name: "Font", icon: <RemoveFormatting className="w-5 h-5" />, content: <FontModule /> },
+    { id: 1, name: "Framer", icon: <Layers3 className="w-5 h-5 text-black dark:text-white" />, content: <FramerModule /> },
+    { id: 2, name: "Editor", icon: <Code className="w-5 h-5 text-black dark:text-white" />, content: <EditorModule /> },
+    { id: 3, name: "Window", icon: <PanelsTopLeft className="w-5 h-5 text-black dark:text-white" />, content: <WindowModule /> },
+    { id: 4, name: "Font", icon: <RemoveFormatting className="w-5 h-5 text-black dark:text-white" />, content: <FontModule /> },
   ];
 
   const closeContentTab = () => {
@@ -25,8 +25,8 @@ export const BottomTabNavigator = () => {
   return (
     <>
       <div className="w-screen fixed bottom-2 right-0 lg:hidden">
-        <div className="w-full px-2">
-          <div className="relative w-full h-10 bg-[#252525] flex items-center justify-center text-white rounded-md p-1">
+        <div className="w-full px-4 md:px-6">
+          <div className="relative w-full h-10 bg-[#e2e1e1] dark:bg-[#272727] flex items-center justify-center rounded-lg p-1 shadow-md dark:shadow-black/20 shadow-[#888888]/50">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
@@ -38,7 +38,7 @@ export const BottomTabNavigator = () => {
             ))}
             {isActiveTab !== 0 && (
               <motion.div
-                className="absolute bottom-0 h-0.5 bg-white"
+                className="absolute bottom-0 h-0.5 bg-[#5b5b5b] dark:bg-[#888888]"
                 layout
                 initial={false}
                 transition={{ type: "spring", stiffness: 500, damping: 30 }}

@@ -20,7 +20,27 @@ const config: Config = {
     },
 		extend: {
       colors: {
-        border: "hsl(var(--border))",
+        background: 'var(--background)',
+        'editor': 'var(--editor)',
+        foreground: 'var(--foreground)',
+        'menu-sidebar': 'var(--menu-sidebar)',
+        'button-background': 'var(--button-background)',
+        'button-foreground': 'var(--button-foreground)',
+        'modal-background': 'var(--modal-background)',
+        'modal-selectors': 'var(--modal-selectors)',
+        'modal-selectors-active': 'var(--modal-selectors-active)',
+        'dropdown-background': 'var(--dropdown-background)',
+        border: 'var(--border-color)',
+        ring: 'var(--ring)',
+        primary: 'var(--primary)',
+        secondary: 'var(--secondary)',
+        accent: 'var(--accent)',
+        danger: 'var(--danger)',
+        warning: 'var(--warning)',
+        success: 'var(--success)',
+        info: 'var(--info)',
+        muted: 'var(--muted)',
+        /* border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
@@ -52,13 +72,13 @@ const config: Config = {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
-        },
+        }, */
       },
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
-      },
+      /* borderRadius: {
+        lg: "var(0.8rem)",
+        md: "calc(var(0.8rem) - 2px)",
+        sm: "calc(var(0.8rem) - 4px)",
+      }, */
       keyframes: {
         "accordion-down": {
           from: { height: "0" },

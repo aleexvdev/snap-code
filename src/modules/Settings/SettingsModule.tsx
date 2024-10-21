@@ -4,12 +4,13 @@ import { Drawer } from "@/components/ui/Drawer";
 import { Computer, Languages, Menu, Moon, Palette, Sun } from "lucide-react";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { useTheme } from "@/hooks/useTheme";
+import { useTheme } from "next-themes";
+
 
 const themesPage = [
-  { id: 1, name: "Claro", icon: <Sun className="w-5 h-5" /> },
-  { id: 2, name: "Oscuro", icon: <Moon className="w-5 h-5" /> },
-  { id: 3, name: "Sistema", icon: <Computer className="w-5 h-5" /> },
+  { id: 1, name: "Claro", setTheme: "light", icon: <Sun className="w-5 h-5" /> },
+  { id: 2, name: "Oscuro", setTheme: "dark", icon: <Moon className="w-5 h-5" /> },
+  { id: 3, name: "Sistema", setTheme: "system", icon: <Computer className="w-5 h-5" /> },
 ];
 
 const languagesPage = [
@@ -20,10 +21,10 @@ const languagesPage = [
 export const SettingsModule = () => {
   const [isDrawerOpen, setDrawerOpen] = useState<boolean>(false);
   const [isLanguage, setIsLanguage] = useState<string>("Español");
-  const { theme, toggleTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
 
   const selectedIndexTheme = themesPage.findIndex(
-    (option) => option.name === theme
+    (option) => option.setTheme === theme
   );
   const sliderVariantsTheme = {
     slide: (index: number) => ({
@@ -59,15 +60,15 @@ export const SettingsModule = () => {
               htmlFor="format"
               className="w-full mb-2 flex items-center gap-x-2"
             >
-              <Palette />
-              <span className="text-lg text-muted-foreground">Tema</span>
+              <Palette className="w-5 h-5 text-[#2c2c2c] dark:text-[#dddddd]" />
+              <span className="text-lg text-[#2c2c2c] dark:text-[#dddddd]">Tema</span>
             </label>
-            <div className="w-full h-max p-1 rounded-md bg-[#272727]">
-              <div className="relative w-full flex gap-3 flex-1 h-full overflow-hidden bg-[#272727]">
+            <div className="w-full h-max p-1 rounded-lg bg-[#EEEEEE] dark:bg-[#272727]">
+              <div className="relative w-full flex gap-3 flex-1 h-full overflow-hidden">
                 {themesPage.map((item) => (
                   <div key={item.name} className="w-1/3 flex items-center justify-center">
                     <motion.div
-                      className="absolute top-0 left-0 h-full w-1/3 bg-[#404040] rounded-sm py-1 cursor-pointer"
+                      className="absolute top-0 left-0 h-full w-1/3 bg-[#d6d6d6] dark:bg-[#404040] rounded-lg py-1 cursor-pointer"
                       custom={selectedIndexTheme}
                       initial="slide"
                       animate="slide"
@@ -81,7 +82,7 @@ export const SettingsModule = () => {
                     <button
                       key={item.id}
                       className="relative z-10 w-full h-full flex items-center justify-center gap-x-2 py-2 cursor-pointer"
-                      onClick={toggleTheme}
+                      onClick={() =>setTheme(item.setTheme)}
                     >
                       {item.icon}
                       <span className="text-sm text-semibold">{item.name}</span>
@@ -96,15 +97,15 @@ export const SettingsModule = () => {
               htmlFor="format"
               className="w-full mb-2 flex items-center gap-x-2"
             >
-              <Languages className="w-5 h-5" />
-              <span className="text-lg text-muted-foreground">Idioma</span>
+              <Languages className="w-5 h-5 text-[#2c2c2c] dark:text-[#dddddd]" />
+              <span className="text-lg text-[#2c2c2c] dark:text-[#dddddd]">Idioma</span>
             </label>
-            <div className="w-full h-max p-1 rounded-md bg-[#272727]">
-              <div className="relative w-full flex gap-3 flex-1 h-full overflow-hidden bg-[#272727]">
+            <div className="w-full h-max p-1 rounded-lg bg-[#EEEEEE] dark:bg-[#272727]">
+              <div className="relative w-full flex gap-3 flex-1 h-full overflow-hidden">
                 {languagesPage.map((item) => (
                   <div key={item.name} className="w-1/2 flex items-center justify-center">
                     <motion.div
-                      className="absolute top-0 left-0 h-full w-1/2 bg-[#404040] rounded-sm py-1 cursor-pointer"
+                      className="absolute top-0 left-0 h-full w-1/2 bg-[#d6d6d6] dark:bg-[#404040] rounded-lg py-1 cursor-pointer"
                       custom={selectedIndexLanguage}
                       initial="slide"
                       animate="slide"

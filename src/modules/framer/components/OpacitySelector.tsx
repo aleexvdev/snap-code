@@ -20,7 +20,7 @@ export const OpacitySelector = () => {
         </label>
         <div className="w-full h-8">
           <div className="flex gap-3 flex-1 h-full">
-            <div className="w-full flex items-center px-2 py-0.5 bg-[#272727] rounded-sm">
+            <div className="w-full flex items-center px-2 py-0.5 bg-[#f0f0f0] dark:bg-[#272727] rounded-lg">
               <input
                 type="range"
                 min="0"

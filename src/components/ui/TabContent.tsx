@@ -27,20 +27,20 @@ export const TabContent = ({
         exit={{ opacity: 0, y: 50 }}
         transition={{ duration: 0.4, ease: "easeInOut" }}
       >
-        <div className="w-full h-full px-2">
-          <div className="bg-[#1A1A1A] w-full h-full max-h-80 rounded-md flex items-center justify-center px-4 py-6 overflow-y-auto">
+        <div className="w-full h-full px-4 md:px-6">
+          <div className="bg-[#cdcbcb] dark:bg-[#1a1a1a] w-full h-full max-h-80 rounded-lg shadow-[1px_0px_8px_2px_#9e9e9e] dark:shadow-[1px_0px_8px_2px_#1a1919] flex items-center justify-center px-4 py-6 overflow-y-auto">
             <div className="w-full">
               <div className="w-full flex items-center justify-between mb-6">
-                <h3 className="text-lg lg:text-sm font-semibold tracking-wider">
+                <h3 className="text-lg lg:text-sm font-semibold tracking-wider text-black dark:text-white">
                   {name}
                 </h3>
                 <motion.button
-                  className="bg-[#252525] rounded-md p-1.5"
+                  className="bg-[#f1f1f1] dark:bg-[#252525] rounded-md p-1.5"
                   whileHover={{ scale: 1.1, rotate: 90 }}
                   whileTap={{ scale: 0.95 }} 
                   onClick={closeContentTab}
                 >
-                  <X className="w-5 h-5" />
+                  <X className="w-5 h-5 text-black/80 dark:text-white/80" />
                 </motion.button>
               </div>
               {children}

@@ -91,16 +91,16 @@ export const ExportModule = () => {
             <div className="w-full flex flex-col items-center justify-start">
               <label
                 htmlFor="format"
-                className="text-lg text-muted-foreground w-full mb-1"
+                className="text-lg text-[#2c2c2c] dark:text-[#dddddd] w-full mb-1"
               >
                 Format
               </label>
-              <div className="w-full h-max p-1 rounded-md bg-[#272727]">
-                <div className="relative w-full flex gap-3 flex-1 h-full overflow-hidden bg-[#272727]">
+              <div className="w-full h-max p-1 rounded-lg bg-[#EEEEEE] dark:bg-[#272727]">
+                <div className="relative w-full flex gap-3 flex-1 h-full overflow-hidden">
                   {formats.map((item) => (
                     <div key={item} className="w-1/3 flex items-center justify-center">
                       <motion.div
-                        className="absolute top-0 left-0 h-full w-1/3 bg-[#404040] rounded-sm py-1 cursor-pointer"
+                        className="absolute top-0 left-0 h-full w-1/3 bg-[#d6d6d6] dark:bg-[#404040] rounded-lg py-1 cursor-pointer"
                         custom={selectedIndexFormat}
                         initial="slide"
                         animate="slide"
@@ -118,7 +118,7 @@ export const ExportModule = () => {
                           dispatch(setExportFormat(item as ExportFormat))
                         }
                       >
-                        <span className="text-base text-semibold">.{item}</span>
+                        <span className="text-base text-semibold text-black dark:text-white">.{item}</span>
                       </button>
                     </div>
                   ))}
@@ -128,16 +128,16 @@ export const ExportModule = () => {
             <div className="w-full flex flex-col items-center justify-start">
               <label
                 htmlFor="scale"
-                className="text-lg text-muted-foreground w-full mb-1"
+                className="text-lg text-[#2c2c2c] dark:text-[#dddddd] w-full mb-1"
               >
                 Escala
               </label>
-              <div className="w-full h-max p-1 rounded-md bg-[#272727]">
-                <div className="relative w-full flex gap-3 flex-1 h-full overflow-hidden bg-[#272727]">
+              <div className="w-full h-max p-1 rounded-lg bg-[#EEEEEE] dark:bg-[#272727]">
+                <div className="relative w-full flex gap-3 flex-1 h-full overflow-hidden">
                   {scales.map((item) => (
                     <div key={item} className="w-1/3 flex items-center justify-center">
                       <motion.div
-                        className="absolute top-0 left-0 h-full w-1/3 bg-[#404040] rounded-sm py-1 cursor-pointer"
+                        className="absolute top-0 left-0 h-full w-1/3 bg-[#d6d6d6] dark:bg-[#404040] rounded-lg py-1 cursor-pointer"
                         custom={selectedIndexScale}
                         initial="slide"
                         animate="slide"
@@ -155,7 +155,7 @@ export const ExportModule = () => {
                           dispatch(setExportScale(item as ExportScale))
                         }
                       >
-                        <span className="text-base text-semibold">{item}x</span>
+                        <span className="text-base text-black dark:text-white text-semibold">{item}x</span>
                       </button>
                     </div>
                   ))}
@@ -165,11 +165,11 @@ export const ExportModule = () => {
           </div>
           <div className="w-full flex flex-col items-center">
             <button
-              className="w-full flex items-center justify-center gap-x-2 bg-blue-800 hover:bg-blue-700 transition-colors rounded-sm py-2"
+              className="w-full flex items-center justify-center gap-x-2 text-white bg-blue-800 hover:bg-blue-700 transition-colors rounded-lg py-2"
               onClick={handleExport}
             >
               <Download className="w-5 h-5" />
-              <span className="text-base text-white">Descargar</span>
+              <span className="text-base font-medium">Descargar</span>
             </button>
           </div>
         </div>

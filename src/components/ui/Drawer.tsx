@@ -50,7 +50,7 @@ export const Drawer = ({ isOpen, onClose, children, title }: DrawerProps) => {
             animate={{ opacity: 0.5 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 bg-black z-40"
+            className="fixed inset-0 bg-[#4f4f4f] dark:bg-[#0F0F0F] bg-opacity-50 z-40"
             onClick={onClose}
           />
           <motion.div
@@ -58,7 +58,7 @@ export const Drawer = ({ isOpen, onClose, children, title }: DrawerProps) => {
             animate="visible"
             exit="hidden"
             variants={variants}
-            className={`fixed bg-[#1A1A1A] z-50 ${
+            className={`fixed bg-[#fafcff] dark:bg-[#1A1A1A] z-50 ${
               isLargeScreen
                 ? "top-0 left-0 h-full w-80"
                 : "bottom-0 left-0 right-0 min-h-max rounded-t-3xl"
@@ -67,12 +67,10 @@ export const Drawer = ({ isOpen, onClose, children, title }: DrawerProps) => {
             <div className="mx-2 p-6">
               <div className="w-full flex items-center justify-between mb-6">
                 {title && (
-                  <h3 className="text-xl lg:text-sm font-semibold">
-                    {title}
-                  </h3>
+                  <h3 className="text-xl lg:text-sm font-semibold">{title}</h3>
                 )}
                 <motion.button
-                  className="bg-[#252525] rounded-md p-1.5"
+                  className="bg-[#d6d6d6] dark:bg-[#252525] rounded-lg p-1.5"
                   whileHover={{ scale: 1.1, rotate: 90 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={onClose}

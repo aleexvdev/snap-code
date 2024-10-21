@@ -7,10 +7,10 @@ import { SettingsModule } from "@/modules/Settings/SettingsModule";
 export const Header = () => {
   return (
     <>
-      <header className="flex justify-between items-center py-4 px-1 md:px-4 bg-background mx-1 md:mx-4">
-        <div className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600">
+      <header className="flex justify-between items-center py-4 mx-4 md:mx-6">
+        <div className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-blue-600 to-blue-800">
           Sn
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800">
             apCo
           </span>
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800">
